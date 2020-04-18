@@ -1,0 +1,24 @@
+{
+  "name": "usestatewithcallback",
+  "scope": "usestatewithcallback",
+  "version": "1.0.0",
+  "description": "Use this package to add a callback whenever setting the current state using the useState method",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "peerDependencies": {
+    "react": "^16.13.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "react",
+    "hooks",
+    "usestate"
+  ],
+  "author": "Erez Rosenbloom",
+  "license": "ISC"
+}
