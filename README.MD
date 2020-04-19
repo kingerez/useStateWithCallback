@@ -2,7 +2,7 @@
 
 I created this package to enable developers to use a functionality similar to what we used to have with the setState method.
 
-## installation
+## Installation
 npm i @kingerez/usestatewithcallback
 
 -or-
