@@ -1,16 +1,20 @@
 import * as React from 'react';
-export const useStateWithCallback = <T>(defaultValue: T) => {
+export const useStateWithCallback = <T>(defaultValue: T, synchronous?: boolean) => {
     const [value, setValue] = React.useState<T>(defaultValue);
     const [callback, setCallback] = React.useState<Function | null>(null);
 
-    React.useEffect(() => {
+    const handler = () => {
         if (typeof callback === 'function') {
-            callback();
+            callback(value);
         }
         return () => {
             setCallback(null);
         };
-    }, [value, callback]);
+    };
+
+    React.useEffect(synchronous ? () => {} : handler, [value, callback]);
+
+    React.useLayoutEffect(synchronous ? handler : () => {}, [value, callback]);
 
     const setValueWithCallback = (newValue: T, callback?: Function) => {
         if (typeof callback === 'function') {
